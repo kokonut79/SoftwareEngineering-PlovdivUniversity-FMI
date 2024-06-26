@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MT's project</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1"/ >
+<link rel="stylesheet" type="text/css" href="">
+
+	
+	
+<style>
+
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+* {
+  font-family: "Titillium Web", sans-serif;
+  color: white;
+}
+
+
+body{
+	background: url("https://i.pinimg.com/originals/5a/92/91/5a9291527c52000b0e9b134a0e8e03e2.jpg");
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: auto; /* Resize the background image to cover the entire container */
+}
+
+.navbar .navbar-brand {
+  font-size: 30px;
+}
+.navbar .nav-item {
+  padding: 10px 20px;
+}
+.navbar .nav-link {
+  font-size: 20px;
+  margin-left: 10px;
+}
+.fa-bars {
+  color: white;
+  font-size: 30px;
+}
+
+.nav-link{
+	color: white;
+	transition-duration: 0.1s;
+}
+
+.nav-link:hover{
+	color:green;
+}
+
+.navbar-brand{
+	color:white;
+	pointer-events:none;
+}
+
+.btn{
+	font-size: 55px;
+	background-color: #4CAF50; /* Green */
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.1s;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, +275%);
+	transform: translate(-50%, +400%);
+}
+.btn:hover{
+	background-color: red;
+}
+
+.btnAddInfo{
+	font-size: 35px;
+	background-color: #4CAF50; /* Green */
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.1s;
+	margin-top: 10px;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	-ms-transform: translate(0%, +5%);
+	transform: translate(0%, +125%);
+}
+
+.tabEine {
+	display: none;
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 20px Arial, sans-serif;
+	text-align: center;
+	text-decoration: none;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, +0%);
+}
+.tabEine thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: green;
+    padding: 10px;
+    text-align: left;
+}
+.tabEine tbody td {
+    border: solid 1px #DDEEEE;
+    color: white;
+	background-color: black;
+    padding: 10px;
+}
+
+.btnShowInfo{
+	font-size: 35px;
+	background-color: #4CAF50; /* Green */
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 5%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	-ms-transform: translate(0%, +5%);
+	transform: translate(0%, +155%);
+}
+
+
+</style>
+
+<script>
+
+function showDiv() {
+	if(document.getElementById('tableStudent').style.display = "none"){
+		document.getElementById('tableStudent').style.display = "inline";
+   }
+   if(document.getElementById('genBtn').style.display = "inline-block;"){
+		document.getElementById('genBtn').style.display =  "none";
+   }
+}
+
+
+</script>
+
+</head>
+<body>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar sticky-top navbar-expand-lg bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">The random site!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <i class="fas fa-bars"></i>
+  </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'good deed' %}">Good Deeds</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'events' %}">Events</a>
+                </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <br>
+  
+  <table class="tabEine" id="tableStudent">
+	<thead>
+		<tr>
+			<th>
+				Name
+			</th>
+			<th>
+				Major
+			</th>
+			<th>
+				Faculty Number
+			</th>
+		</tr>
+	</thead>
+	
+	{% for instance in data %}
+		<tr>
+			<td>
+				{{ instance.fields.name}}
+			</td>
+			<td>
+				{{ instance.fields.major}}
+			</td>
+			<td>
+				{{ instance.fields.fn}}
+			</td>
+		</tr>
+    {% endfor %}
+	
+	
+  </table>
+
+  
+         
+  
+  <button type="button" onclick="showDiv()" id="genBtn" class="btn">Show all students</button>
+  <button onclick="location.href='{% url 'infoAdd' %}'" type="button" class="btnAddInfo">Add more students!</button>
+  <button onclick="location.href='{% url 'NoPermission' %}'" type="button" class="btnShowInfo">Show students and courses they take</button>
+  
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+http://127.0.0.1:8000/admin
+http://127.0.0.1:8000/api/
+http://127.0.0.1:8000/api/hello-view/
+http://127.0.0.1:8000/api/hello-viewset/
+http://127.0.0.1:8000/api/hello-viewset/1
+http://127.0.0.1:8000/api/profile/
+http://127.0.0.1:8000/api/login/
+http://127.0.0.1:8000/api/feed/

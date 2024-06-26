@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>goodDeed</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1"/ >
+	<link rel="stylesheet" type="text/css" href="">
+	
+<style>
+	@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+	
+	* {
+		font-family: "Titillium Web", sans-serif;
+	}
+	body{
+		background: url("https://img.freepik.com/free-vector/festive-christmas-clipart-elements-collection_53876-95704.jpg?w=2000");
+		background-repeat: no-repeat; /* Do not repeat the image */
+		background-size: auto; /* Resize the background image to cover the entire container */
+	}
+	.btn{
+		font-size: 55px;
+		background-color: #4CAF50; /* Green */
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		transition-duration: 0.1s;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, +275%);
+		transform: translate(-50%, +400%);
+	}
+	.btn:hover{
+		background-color: red;
+	}
+	.navbar .navbar-brand {
+		font-size: 30px;
+	}
+		
+	.navbar .nav-item {
+		padding: 10px 20px;
+	}
+		
+	.navbar .nav-link {
+		font-size: 20px;
+		margin-left: 10px;
+	}
+	.fa-bars {
+		color: white;
+		font-size: 30px;
+	}
+	.nav-link{
+		color: white;
+		transition-duration: 0.1s;
+	}
+	.nav-link:hover{
+		color:green;
+	}
+	.navbar-brand{
+		color:white;
+		pointer-events:none;
+	}
+	
+	.containerText{
+		display: none;
+		font-size: 30px;
+		background-color: #4CAF50; /* Green */
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -70%);
+	}
+
+</style>
+
+<script>
+
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+
+function showDiv() {
+	if(document.getElementById('collapse_1').style.display = "none"){
+		document.getElementById('collapse_1').style.display = "block";
+   }
+	setTimeout(() => { location.reload() }, 4000);
+	if(document.getElementById('genBtn').style.display = "inline-block;"){
+		document.getElementById('genBtn').style.display =  "none";
+   }
+	
+	
+}
+
+
+
+
+
+
+</script>
+	
+</head>
+<body>
+
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar sticky-top navbar-expand-lg bg-dark">
+    <div class="container">
+		<a class="navbar-brand" href="#">The random site!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <i class="fas fa-bars"></i>
+  </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Harvard' %}">Harvard</a>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'events' %}">Events</a>
+                </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+<div class="containerText" id="collapse_1" style="">
+                            <div class="card-body">
+ 
+                                <ul class="list-menu" id="proba1">
+
+                                        <li>{{ deeds }}</li>
+
+                                </ul>
+ 
+                            </div> <!-- card-body.// -->
+                        </div>
+  
+  
+  <button type="button" onclick="showDiv()" class="btn" id="genBtn">Generate!</button>
+  
+
+							
+  
+
+	
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+
+ 
+</body>
+</html>

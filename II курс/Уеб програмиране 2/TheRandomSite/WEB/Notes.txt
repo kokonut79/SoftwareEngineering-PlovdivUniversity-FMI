@@ -1,0 +1,9 @@
+admin panel credits:
+
+tom / tomcom@abv.bg
+123456
+
+
+
+Command to start server:
+python manage.py runserver

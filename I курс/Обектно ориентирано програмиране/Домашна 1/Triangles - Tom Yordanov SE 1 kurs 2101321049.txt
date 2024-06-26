@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+class scratch{
+    public static Scanner input = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+        System.out.println("Enter triangles sides: ");
+        double a = input.nextDouble();
+        double b = input.nextDouble();
+        double c = input.nextDouble();
+        input.close();
+
+        boolean isNotTriangle = true;
+
+        if (a + b > c && a + c > b && b + c > a){
+            isNotTriangle = false;
+        }
+        if(isNotTriangle){
+            System.out.println("not a triangle");
+        }else {
+            if (a != b && b != c) {
+                System.out.println("Raznostranen");
+            } else if (a == b && b == c) {
+                System.out.println("Ravnostranen");
+            } else {
+                System.out.println("Ravnobedren");
+            }
+            if (Math.pow(c, 2) == Math.pow(a, 2) + Math.pow(b, 2)) {
+                System.out.println(" the triangle is pravougulen");
+                // and im tupouglen
+            }
+        }
+    }
+}

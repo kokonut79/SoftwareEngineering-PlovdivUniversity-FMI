@@ -1,0 +1,67 @@
+import java.util.Scanner;
+class Homework{
+    public static Scanner input = new Scanner(System.in);
+
+    static void perfectNumbers(){
+        System.out.println("Enter starting range:");
+        int start = input.nextInt();
+        System.out.println("Enter finish range:");
+        int end = input.nextInt();
+        input.close();
+
+        int sum = 0;
+        for (start = start; start <= end; start++) {
+            if (start % 2 != 0) {
+                continue;
+            }else {
+                for (int j = 1; j <= start - 1; j++) {
+                    if (start % j == 0) {
+                        sum += j;
+                    }
+                }if (start == sum) {
+                    System.out.println(sum);
+                }sum = 0;
+            }
+        }
+    }
+
+
+    static void sumAndAverage(){
+
+        System.out.println("Enter starting range:");
+        int start = input.nextInt();
+        System.out.println("Enter finish range:");
+        int end = input.nextInt();
+        input.close();
+
+        int sum = 0;
+        int counter =0;
+
+        for (start = start; start <= end; start++){
+            sum += start;
+            counter += 1;
+
+        }
+        int average = sum / counter;
+        System.out.println("Sum is " + sum);
+        System.out.println("Average is " + average);
+    }
+
+
+    public static void main(String[] args) {
+
+        System.out.println("0) Exit\n1)Perfect nums\n2)Find sum:");
+        int answ = input.nextInt();
+
+        if (answ == 0){
+            System.exit(0);
+        } else if (answ == 1){
+            perfectNumbers();
+        } else{
+            sumAndAverage();
+        }
+    }
+
+}
+
+// Написан е така,че input would always be valid..

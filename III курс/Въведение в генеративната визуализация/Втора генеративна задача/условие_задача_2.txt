@@ -1,0 +1,7 @@
+Задача 2:
+Създайте графика 2D или 3D, която да може да се принтира с 3D принтер.
+
+Ако е в 2D може да я трансформирате в .STL файл, като използвате IMGtoSTLconverter (https://drive.google.com/drive/folders/1u9G0-AtlsW39ZrRqp7UM63xG3mS83XZU?usp=drive_link)
+
+Ако желаете да създатете нещо в 3D, може като основа да използвате:
+(https://drive.google.com/drive/folders/1uF4ZC30uzPd4mfo4v_JyQARE_glBOR2F?usp=drive_link)

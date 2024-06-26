@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MT's project</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width , initial-scale=1"/ >
+<link rel="stylesheet" type="text/css" href="">
+
+	
+	
+<style>
+
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+* {
+  font-family: "Titillium Web", sans-serif;
+  color: blue;
+}
+
+body{
+	background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbackground%2520image%2F&psig=AOvVaw2sT28IhELvitrAq_CVUoVr&ust=1670582541569000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKCFwYrr6fsCFQAAAAAdAAAAABAJ");
+	background-repeat: no-repeat;
+	background-size: auto; 
+}
+
+.navbar .navbar-brand {
+  font-size: 30px;
+}
+.navbar .nav-item {
+  padding: 10px 20px;
+}
+.navbar .nav-link {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 30px;
+}
+
+.nav-link{
+	color: white;
+	transition-duration: 0.1s;
+}
+.nav-link:hover{
+	color:green;
+}
+.navbar-brand{
+	color:white;
+	pointer-events:none;
+}
+
+.field{
+color: gray;
+}
+
+.para1{
+color: white;
+}
+
+.btnSubmit{
+	font-size: 15px;
+	background-color: #4CAF50; /* Green */
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.1s;
+	margin: 0;
+	padding: 5px 74px;
+}
+.btnSubmit:hover{
+	background-color: red;
+}
+
+.container23{
+	margin:auto;
+	width: 50%;
+	padding: 10%;
+}
+</style>
+
+</head>
+<body>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar sticky-top navbar-expand-lg bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">The random site!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <i class="fas fa-bars"></i>
+  </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'events' %}">events</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<div class="container23">
+	<div class="add-info">
+		<div class="left"></div>
+		<div class="right">
+			<h2 class="para1">Join our next event</h2>
+			<form class="review-form" action="." method="POST"> {% csrf_token %}
+				<input type="text" class="field" placeholder="Name" name="fname">
+				<input type="text" class="field" placeholder="Surname" name="lname">
+				<button type="submit" class="btnSubmit">Add</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</body>
+</html>
